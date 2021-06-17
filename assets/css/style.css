@@ -82,6 +82,8 @@ h3 {
     font-size: 20px;
     height: 80px;
 }
+
+
 .answer{    
     background-color: teal;
     border: 2px color black;
@@ -93,7 +95,7 @@ h3 {
     text-align: center;
     color: white;
     font-size: 20px;
-    height: 50px;
+    height: 150px;
     
 }
 
