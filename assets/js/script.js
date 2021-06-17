@@ -1,110 +1,76 @@
 
-/*let start document.querySelector(".start");
-let quiz = document.querySelector(".quiz");
-let display = document.querySelector(".time");
-let question = document.querySelector(".questions");
-let optionA = document.querySelector(".A");
-let optionB = document.querySelector(".B");
-let optionC = document.querySelector(".C");*/
 
 var secondsLeft = 90;
 var timer;
 var timerCount;
-var questions ="";
+var questions = "";
 var score = 0;
-/*
-var startButton = document.querySelector(".start-button");*/
 
-let timeEl = document.querySelector (".timer");
 
-let question = [ 
+let timeEl = document.querySelector(".timer");
+let questionsEl = document.querySelector(".questions");
+let answersEl = document.querySelector(".answers");
+let startBtn = document.getElementById("#start-btn")
+
+
+var allScores = [];
+var storedScores = JSON.parse(localStorage.getItem("userData"));
+
+var questions = [
     {
-    question= "How many planets are there our solar system?",
-        optionA= "6",
-        optionB= "8",
-        optionC= "9",
-        optionD="7",
-        correct= "B",
+        question= "How many planets are there our solar system?",
+        options: ["6", "8", "9", "7"],
+        answer: "8"
     },
     {
-    question= "Which planet has the most moons?",
-        optionA= "Earth",
-        optionB= "Mars",
-        optionC= "Saturn",
-        optionD="Mercury",
-        correct= "C",
+        question= "Which planet has the most moons?",
+        options: ["Earth", "Mars", "Saturn", "Mercury"],
+        answer: "Saturn"
+
     },
     {
         question= "Which is the hottest planet in our solar system?",
-            optionA= "Jupiter",
-            optionB= "Mars",
-            optionC= "Earth",
-            optionD="Venus",
-            correct= "D",
-        },
-        {
+        options: ["Jupiter", "Mars", "Saturn", "Venus"],
+        answer: "Venus"
+    },
+    {
         question= "Which planet is the largest in our solar system?",
-            optionA= "Jupiter",
-            optionB= "Mars",
-            optionC= "Saturn",
-            optionD="Mercury",
-            correct= "A",
-        },
-        {
-            question= "What is the order of the planets from the sun in our solar system?",
-                optionA= "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune",
-                optionB= "Mars, Venus, Earth, Jupiter, Saturn, Uranus, Neptune",
-                optionC= "Saturn, Earth, Mercury, Mars, Uranus, Neptune, Jupiter,Venus",
-                optionD= "Neptune, Uranus, Saturn, Jupiter, Mars, Earth, Venus, Mercury",
-                correct= "A",
-            },
-    
+        options: ["Jupiter", "Mercury", "Earth", "Venus"],
+        answer: "Jupiter"
+    },
+    {
+        question= "Which is the fifth larges planet in the Solar System?",
+        options: ["Jupiter", "Earth", "Saturn", "Venus"],
+        answer: "Earth"
+    },
+
 ]
 
+start - btn.addEventListener("click", startQuiz);
 
-    function renderQuestion(){
-        let q = questions[runningQuestion];
-        
-        question.innerHTML = "<p>"+ q.questions +"</p>";
-        optionA.innerHTML = q.optionA;
-        optionB.innerHTML = q.optionB;
-        optionC.innerHTML = q.optionC;
-        optionD.innerHTML = q.optionD;
+function starQuiz() {
+    if (storedScores !== null) {
+        allScores = storedScores;
     }
+    timer()
+  
 
-    start.addEventListener("click",startQuiz);
+    getQuestion() {
 
-// start quiz/*
-/*function startQuiz(){
-    start.style.display = "none";
-    runningQuestion = 0;
-    count = 0;
-    score = 0;
-    renderQuestion();
-    quiz.style.display = "block";
-    
-
-    
-    startTimer(30, display);
+    }
 }
 
-function startGame() {
-    // Prevents start button from being clicked when round is in progress
-    startButton.disabled = true;
-    startTimer()
-  }*/
-
 function timer() {
-    let timerInterval = setInterval(function() {
+    let timerInterval = setInterval(function () {
         timeEl.textContent = secondsLeft
 
-        if(secondsLeft === 0) {
+        if (secondsLeft === 0) {
             clearInterval(timerInterval);
             timeEl.textContent = "Time's up!"
-        } else { 
+        } else {
             secondsLeft--;
             timeEl.textContent = secondsLeft
-            
+
         }
     }, 1000);
 }

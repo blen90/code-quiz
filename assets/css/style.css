@@ -36,7 +36,7 @@
 .box1{
     position: relative;
     width: 500px;
-    height: 400px;
+    height: 500px;
     top: 50%;
     left: 30%;
     border: 2px solid teal;
@@ -56,6 +56,7 @@ h1 {
     }
 
 h2 {
+   
     text-align: center;
     color:purple;
     font-size: 35px;
@@ -66,6 +67,19 @@ h3 {
     font-size: 30px;
 }
 
+.question {
+    background-color: teal;
+    border: 2px color black;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
+        rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
+    margin-bottom: 5px; 
+    margin-top: 5px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    height: 80px;
+}
 .answer{    
     background-color: teal;
     border: 2px color black;
