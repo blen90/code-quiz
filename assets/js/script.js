@@ -7,7 +7,7 @@ var questions = "";
 var score = 0;
 
 
-let timeEl = document.querySelector(".timer");
+let timeEl = document.querySelector(".timer");/*
 let questionsEl = document.querySelector(".questions");
 let answersEl = document.querySelector(".answers");
 let startBtn = document.getElementById("#start-btn")
@@ -59,7 +59,7 @@ function starQuiz() {
 
     }
 }
-
+*/
 function timer() {
     let timerInterval = setInterval(function () {
         timeEl.textContent = secondsLeft
