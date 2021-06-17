@@ -9,20 +9,58 @@ let optionC = document.querySelector(".C");*/
 
 var secondsLeft = 90;
 var timer;
-var timerCount;/*
+var timerCount;
+var questions ="";
+var score = 0;
+/*
 var startButton = document.querySelector(".start-button");*/
 
 let timeEl = document.querySelector (".timer");
-/*
-let questions = {}
+
+let question = [ 
     {
-        question : "How many planets are there in the universe?",
-        choiceA= "6",
-        choiceB= "8",
-        choiceC= "9",
-        choiceD="7"
-        correct= "B"
-    }
+    question= "How many planets are there our solar system?",
+        optionA= "6",
+        optionB= "8",
+        optionC= "9",
+        optionD="7",
+        correct= "B",
+    },
+    {
+    question= "Which planet has the most moons?",
+        optionA= "Earth",
+        optionB= "Mars",
+        optionC= "Saturn",
+        optionD="Mercury",
+        correct= "C",
+    },
+    {
+        question= "Which is the hottest planet in our solar system?",
+            optionA= "Jupiter",
+            optionB= "Mars",
+            optionC= "Earth",
+            optionD="Venus",
+            correct= "D",
+        },
+        {
+        question= "Which planet is the largest in our solar system?",
+            optionA= "Jupiter",
+            optionB= "Mars",
+            optionC= "Saturn",
+            optionD="Mercury",
+            correct= "A",
+        },
+        {
+            question= "What is the order of the planets from the sun in our solar system?",
+                optionA= "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune",
+                optionB= "Mars, Venus, Earth, Jupiter, Saturn, Uranus, Neptune",
+                optionC= "Saturn, Earth, Mercury, Mars, Uranus, Neptune, Jupiter,Venus",
+                optionD= "Neptune, Uranus, Saturn, Jupiter, Mars, Earth, Venus, Mercury",
+                correct= "A",
+            },
+    
+]
+
 
     function renderQuestion(){
         let q = questions[runningQuestion];
