@@ -50,7 +50,9 @@ var questions = [
 
 
 function startQuiz() {
-    console.log("hey we are starting!")
+
+    
+    //console.log("hey we are starting!")
     /*if (storedScores !== null) {
         allScores = storedScores;
     }*/
@@ -63,14 +65,14 @@ function startQuiz() {
 
 function timer() {
     let timerInterval = setInterval(function () {
-        timeEl.textContent = secondsLeft
+       // timeEl.textContent = secondsLeft
 
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
             timeEl.textContent = "Time's up!"
         } else {
             secondsLeft--;
-            timeEl.textContent = secondsLeft
+            timeEl.textContent = secondsLeft;
 
         }
     }, 1000);
@@ -81,14 +83,39 @@ function getQuestion() { //empty and show the question and once you click answer
     questionsEl.append(questions[questionIndex].question)
 
     questions[questionIndex].options.forEach(function(singleAnswer){
+
         console.log(singleAnswer)
     // create one box only for the answers so they display in a list
         answersEl.append(singleAnswer);
+    {
+            // create new button for each choice
+            var choiceButton = document.createElement("button");
+            choiceButton.textContent = currentQuestion.choices[i];
+            
+            // display on the page
+            choicesEl.appendChild(choiceButton);
+          }
+          // attach click event listener to each choice
+          choicesEl.children[0].addEventListener("click", function(event){
+            questionClick(choicesEl.children[0]);
+          });
+          choicesEl.children[1].addEventListener("click", function(event){
+            questionClick(choicesEl.children[1]);
+          });
+          choicesEl.children[2].addEventListener("click", function(event){
+            questionClick(choicesEl.children[2]);
+          });
+          choicesEl.children[3].addEventListener("click", function(event){
+            questionClick(choicesEl.children[3]);
+          });
+        }
+    
+
+      
+
         //Dinamically add buttons for the answers
         //After an answer is clicked question index++ to move to the next question
-    })
 
-}
 //Append the questions and answers to the boxes 
 
 startBtn.addEventListener("click", startQuiz);
