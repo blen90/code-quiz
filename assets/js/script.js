@@ -1,22 +1,25 @@
-
-var secondsLeft = 90;
 var timer;
+var secondsLeft = 10;
 var timerCount;
+
 var questions = "";
-var score = 0;
+var answers = "";
+var highscore = 0;
 
 
+let startBtn = document.getElementById("start-btn")
 let timeEl = document.querySelector(".timer");
-
-
 let questionsEl = document.querySelector(".question");
 let answersEl = document.querySelector(".answer");
-let startBtn = document.getElementById("start-btn")
+let lastQuestion = questions.length - 1;
+let highscoreEl = document.querySelector(".high-score");
 
-/*
+
+
 var allScores = [];
-var storedScores = JSON.parse(localStorage.getItem("userData"));*/
+var storedScores = JSON.parse(localStorage.getItem("userData"));
 var questionIndex = 0;
+
 var questions = [
     {
         question: "How many planets are there in our Solar System?",
@@ -50,15 +53,17 @@ var questions = [
 
 
 function startQuiz() {
-
     
     //console.log("hey we are starting!")
     /*if (storedScores !== null) {
         allScores = storedScores;
     }*/
+
     timer()
 
     getQuestion() 
+
+
 }
 
 
@@ -79,21 +84,21 @@ function timer() {
 }
 
 function getQuestion() { 
+
+    console.log(questionIndex)
     
-    console.log//empty and show the question and once you click answer it should go to the next question
-    // questionsEl.empty();
-    questionsEl.append(questions[questionIndex].question)
+    questionsEl.append(questions[questionIndex].question);
 
     questions[questionIndex].options.forEach(function(singleAnswer){
         console.log(singleAnswer)
-    // create one box only for the answers so they display in a list
-        answersEl.append(singleAnswer);
+        answersEl.append(singleAnswer); {
 
-        
+   
 
         //Dinamically add buttons for the answers
         //After an answer is clicked question index++ to move to the next question
-    })
+    }
+});
 
 }
 //Append the questions and answers to the boxes 
