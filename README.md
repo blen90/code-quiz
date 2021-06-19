@@ -31,4 +31,4 @@ Before you begin, ensure you have met the following requirements:
 * You have installed the lastest Google Chrome browser.
 
 ## Screenshot of the Planet Facts Quiz
-![Quiz](./assets/images/quiz.jpg)
+![quiz](./assets/images/quiz.jpg)
