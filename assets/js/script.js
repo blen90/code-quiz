@@ -1,5 +1,5 @@
 var timer;
-var secondsLeft = 90;
+var secondsLeft = 45;
 var timerCount;
 
 var questions = "";
@@ -29,7 +29,7 @@ var questions = [
 
     },
     {
-    question: "How many planets are there in our Solar System?",
+        question: "How many planets are there in our Solar System?",
         options: ["6", "8", "9", "7"],
         correct: "8"
     },
@@ -92,13 +92,7 @@ function timer() {
 }
 
 function getQuestion() {
-
-    // if(totalQuestions.length ===0 || questionIndex > totalQuestions){
-    //     localStorage.setItem("Highscore, score")
-    // }else {}
-    //     return() ;
-
-    // }
+    
 
     console.log(questionIndex)
 
@@ -106,7 +100,6 @@ function getQuestion() {
 
     questions[questionIndex].options.forEach(function (singleAnswer) {
         console.log(singleAnswer)
-        
 
         var answerButton = document.createElement("button");
         answerButton.id = "answerButton";
@@ -114,24 +107,31 @@ function getQuestion() {
         answerButton.style.background = "gray";
         answersEl.appendChild(answerButton);
 
-        if (correctAnswer === true) {
-            score++;
-        } else{
-            timer -= 3;
-        }
-
     
-        // answerButton.addEventListener("click", )
+    
+});
+}
 
 
 
+function isAnswerCorrect() {
 
+    //event.target -- tells us everything we need to know about what was just clicked on
+    //get the custom attribute of the button that was clicked and determine if answer is correct or no
+}
 
-        //Dinamically add buttons for the answers
-        //After an answer is clicked question index++ to move to the next question
-        //}
-    });
+function answerIsCorrect() {
+        if( answersEl === questions.correct){
+            // answer is correct
+            score++;
+    questionIndex++;
+    getQuestion();
+}
+}
 
+function isAnswerWrong() {
+    questionIndex++;
+    getQuestion();
 }
 
 //     function rightAnswer() {
@@ -147,13 +147,13 @@ function getQuestion() {
 // }
 
 
-    // function createButton(answer){
-    //     const
-    // }
+// function createButton(answer){
+//     const
+// }
 
-    //Append the questions and answers to the boxes 
+//Append the questions and answers to the boxes 
 
-    startBtn.addEventListener("click", startQuiz);
+startBtn.addEventListener("click", startQuiz);
 
 
 /*
