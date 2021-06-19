@@ -1,5 +1,5 @@
 var timer;
-var secondsLeft = 45;
+var secondsLeft = 90;
 var timerCount;
 
 var questions = "";
@@ -57,7 +57,7 @@ const totalQuestions = 5;
 
 function startQuiz() {
     // questionIndex = 0;
-    // var allScores = "";
+    // var savedScores = "";
     // totalQuestions = 5;
 
 
@@ -70,8 +70,6 @@ function startQuiz() {
     timer()
 
     getQuestion()
-
-
 }
 
 
@@ -92,7 +90,7 @@ function timer() {
 }
 
 function getQuestion() {
-    
+
 
     console.log(questionIndex)
 
@@ -104,35 +102,33 @@ function getQuestion() {
         var answerButton = document.createElement("button");
         answerButton.id = "answerButton";
         answerButton.textContent = singleAnswer;
-        answerButton.style.background = "gray";
+        answerButton.style.background = "purple";
         answersEl.appendChild(answerButton);
-
-    
-    
-});
+    });
 }
 
 
 
 function isAnswerCorrect() {
 
+    element.getAttribute('answerButton');
     //event.target -- tells us everything we need to know about what was just clicked on
     //get the custom attribute of the button that was clicked and determine if answer is correct or no
 }
 
 function answerIsCorrect() {
-        if( answersEl === questions.correct){
-            // answer is correct
-            score++;
-            questionIndex++;
-        } else {
-            // answer is wrong
-            timer -= 3;
-            
+    if (answersEl === questionsEl.correct) {
+        // answer is correct
+        score++;
+        questionIndex++;
+    } else {
+        // answer is wrong
+        timer -= 3;
 
-    
-    getQuestion();
-}
+
+
+        getQuestion();
+    }
 }
 
 function isAnswerWrong() {
@@ -145,7 +141,7 @@ function isAnswerWrong() {
 //             // answer is correct
 //             score++;
 
-       
+
 
 //         }
 // }
