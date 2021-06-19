@@ -1,8 +1,5 @@
 # hw4-code-quiz
 
-# hw3-code-generator
-
-
 ## Link to my deployed repository
 
 https://blen90.github.io/hw4-code-quiz/
