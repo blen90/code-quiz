@@ -96,18 +96,18 @@ function getQuestion() {
 }
 
 function answerIsCorrect() {
-        
-        if (answersEl === questions[questionIndex].correct) {
-            textContent = "That is correct!"
-            highscore++;
-            questionIndex++;
-        } else {
-            // answer is wrong
-            timer -= 3;
-        }
+
+    if (answersEl === questions[questionIndex].correct) {
+        textContent = "That is correct!"
+        highscore++;
+        questionIndex++;
+    } else {
+        // answer is wrong
+        timer -= 3;
+    }
 };
 
-   
+
 
 startBtn.addEventListener("click", startQuiz);
 
