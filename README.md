@@ -3,14 +3,9 @@
 # hw3-code-generator
 
 
-## Link to my homework repository:
-
-
-
 ## Link to my deployed repository
 
-
-
+https://blen90.github.io/hw4-code-quiz/
 
 ## My task
 
