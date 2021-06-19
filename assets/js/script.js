@@ -1,5 +1,5 @@
 var timer;
-var secondsLeft = 10;
+var secondsLeft = 90;
 var timerCount;
 
 var questions = "";
@@ -11,7 +11,8 @@ let startBtn = document.getElementById("start-btn")
 let timeEl = document.querySelector(".timer");
 let questionsEl = document.querySelector(".question");
 let answersEl = document.querySelector(".answer");
-let lastQuestion = questions.length - 1;
+let correctAnswer = true;
+let currentQuestion = questions.length - 1;
 let highscoreEl = document.querySelector(".high-score");
 
 
@@ -22,15 +23,15 @@ var questionIndex = 0;
 
 var questions = [
     {
-        question: "How many planets are there in our Solar System?",
-        options: ["6", "8", "9", "7"],
-        correct: "8"
-    },
-    {
         question: "Which planet has the most moons?",
         options: ["Earth", "Mars", "Saturn", "Mercury"],
         correct: "Saturn"
 
+    },
+    {
+    question: "How many planets are there in our Solar System?",
+        options: ["6", "8", "9", "7"],
+        correct: "8"
     },
     {
         question: "Which is the hottest planet in our Solar System?",
@@ -50,10 +51,17 @@ var questions = [
 
 ]
 
+const maxPoints = 100;
+const totalQuestions = 5;
 
 
 function startQuiz() {
-    
+    // questionIndex = 0;
+    // var allScores = "";
+    // totalQuestions = 5;
+
+
+
     //console.log("hey we are starting!")
     /*if (storedScores !== null) {
         allScores = storedScores;
@@ -61,7 +69,7 @@ function startQuiz() {
 
     timer()
 
-    getQuestion() 
+    getQuestion()
 
 
 }
@@ -70,7 +78,7 @@ function startQuiz() {
 
 function timer() {
     let timerInterval = setInterval(function () {
-       // timeEl.textContent = secondsLeft
+        // timeEl.textContent = secondsLeft
 
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
@@ -83,27 +91,69 @@ function timer() {
     }, 1000);
 }
 
-function getQuestion() { 
+function getQuestion() {
+
+    // if(totalQuestions.length ===0 || questionIndex > totalQuestions){
+    //     localStorage.setItem("Highscore, score")
+    // }else {}
+    //     return() ;
+
+    // }
 
     console.log(questionIndex)
-    
+
     questionsEl.append(questions[questionIndex].question);
 
-    questions[questionIndex].options.forEach(function(singleAnswer){
+    questions[questionIndex].options.forEach(function (singleAnswer) {
         console.log(singleAnswer)
-        answersEl.append(singleAnswer); {
+        
 
-   
+        var answerButton = document.createElement("button");
+        answerButton.id = "answerButton";
+        answerButton.textContent = singleAnswer;
+        answerButton.style.background = "gray";
+        answersEl.appendChild(answerButton);
+
+        if (correctAnswer === true) {
+            score++;
+        } else{
+            timer -= 3;
+        }
+
+    
+        // answerButton.addEventListener("click", )
+
+
+
+
 
         //Dinamically add buttons for the answers
         //After an answer is clicked question index++ to move to the next question
-    }
-});
+        //}
+    });
 
 }
-//Append the questions and answers to the boxes 
 
-startBtn.addEventListener("click", startQuiz);
+//     function rightAnswer() {
+//         if (correctAnswer === true[getQuestion].correct) {
+//             // answer is correct
+//             score++;
+
+//         } else {
+//             // answer is wrong
+//             timer -= 3;
+
+//         }
+// }
+
+
+    // function createButton(answer){
+    //     const
+    // }
+
+    //Append the questions and answers to the boxes 
+
+    startBtn.addEventListener("click", startQuiz);
 
 
 /*
