@@ -124,7 +124,13 @@ function answerIsCorrect() {
         if( answersEl === questions.correct){
             // answer is correct
             score++;
-    questionIndex++;
+            questionIndex++;
+        } else {
+            // answer is wrong
+            timer -= 3;
+            
+
+    
     getQuestion();
 }
 }
@@ -139,9 +145,7 @@ function isAnswerWrong() {
 //             // answer is correct
 //             score++;
 
-//         } else {
-//             // answer is wrong
-//             timer -= 3;
+       
 
 //         }
 // }
