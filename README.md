@@ -1,8 +1,8 @@
-# hw4-code-quiz
+# Code Quiz
 
 ## Link to my deployed repository
 
-https://blen90.github.io/hw4-code-quiz/
+https://blen90.github.io/code-quiz/
 
 ## My task
 
